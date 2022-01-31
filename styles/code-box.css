@@ -1,0 +1,127 @@
+.code-box {
+  position: relative;
+  display: block;
+  width: 500px;
+  min-height: calc(24px + 1.5rem);
+  padding: 0.5rem 1rem;
+  border: 1px solid #21252940;
+  overflow: hidden;
+  /* border-left: .25rem solid #21252940; */
+  background-color: #21252908;
+  flex: 0;
+}
+
+code {
+  font-family: ibm-plex-mono, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #212529;
+}
+
+.copy-btn {
+  position: absolute;
+  overflow: hidden;
+  right: -2.5rem;
+  top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  transform: translateX(-3rem);
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  will-change: transform;
+  transition: transform 0.3s, background-color 200ms;
+  transition-delay: background-color 200ms;
+}
+
+.copy-btn:hover {
+  /* transition: background-color 1s; */
+  background-color: #28a745 !important;
+  cursor: pointer;
+}
+
+.code-box:hover .copy-btn {
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.5, 1), background-color 0.2s;
+  transform: translateX(-3rem);
+}
+
+.code-box:hover .copy-ico {
+  transition: border-color 0.2s;
+}
+
+.copy-btn:hover .copy-ico {
+  border-color: #f1f1f2;
+}
+
+.copy-ico {
+  border: 2px solid #28a745;
+}
+
+.ico-wrapper {
+  position: absolute;
+  top: calc(0.25rem + 1px);
+}
+
+.ico-wrapper.check {
+  left: .25rem;
+}
+
+#checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /* outline: 1px solid red; */
+  -ms-transform: rotate(40deg); 
+    -webkit-transform: rotate(40deg); 
+    transform: rotate(40deg);
+}
+
+#checkmark:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 16px;
+  background-color: #fff;
+  left: 12px;
+  top: 0px;
+}
+
+#checkmark:after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  background-color: #fff;
+  left: 6px;
+  top: 14px;
+}
+
+.ico-wrapper.copy {
+  left: calc(1.75rem + 0.35rem + 1px);
+}
+
+.first {
+  position: absolute;
+  border-bottom: none;
+  border-right: none;
+  width: 0.8rem;
+  height: 1rem;
+}
+
+.second {
+  position: absolute;
+  left: 0.25rem;
+  top: 0.25rem;
+  width: 0.8rem;
+  height: 1rem;
+}
+
+.copy-btn.ico-swap {
+  background-color: transparent;
+  transform: none;
+}
+
+.ico-wrapper.ico-swap {
+  transform: translateX(-1.75rem);
+  transition: transform 200ms;
+  transition-delay: 200ms;
+}

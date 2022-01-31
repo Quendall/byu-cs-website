@@ -1,0 +1,211 @@
+/*  Colors
+
+- MAIN -
+#212529 Text Black
+#28a745 Green
+#1f439f Royal Blue
+
+- TERMINAL -
+#3ec54d Terminal Green
+#111311 Terminal Black
+
+*/
+
+body {
+  font-family: ibm-plex-mono, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-top: 5rem;
+  padding-bottom: 4.75rem;
+}
+
+.page {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 960px;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+p {
+  font-family: ibm-plex-sans, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.25rem;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* gets rid of the stupid bootstrap focus outline */
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active
+{
+    outline:0px !important;
+    -webkit-appearance:none;
+    box-shadow: none !important;
+}
+
+/* --- Navbar --- */
+
+.logo {
+  margin-right: 1rem;
+  height: 48px;
+  width: 48px;
+  fill: #1f439f;
+}
+
+.logo-text {
+  padding-bottom: 0.4rem;
+}
+
+.logo-text.sm {
+  display: inline-block;
+}
+
+.logo-text.lg {
+  display: none;
+}
+
+.bg-light {
+  background-color: #fff !important;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #1f439f !important;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+  justify-content: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #212529;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #212529;
+}
+
+.nav-item.active>.nav-link::after {
+  position: absolute;
+  font-weight: 800;
+  content: "]";
+}
+
+.nav-item.active>.nav-link::before {
+  position: absolute;
+  left: -.1rem;
+  font-weight: 800;
+  content: "[";
+}
+
+.btn {
+  border-radius: 0;
+  padding: 0.5rem 1.5rem;
+}
+
+.navbar-collapse {
+  background-color: #fff;
+}
+
+/* --- End Navbar --- */
+
+/* --- Footer --- */
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 2.75rem;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #1f439f;
+  z-index: 3;
+  font-family: ibm-plex-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.foot-img {
+  fill: #fff;
+  margin-left: 1rem;
+}
+
+.foot-link {
+  margin-left: 0.3rem;
+  color: #fff;
+}
+
+.foot-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* --- End Footer --- */
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (min-width: 768px) {
+  .logo-text.sm {
+    display: none;
+  }
+  .logo-text.lg {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    height: 5rem;
+  }
+
+  .navbar-nav {
+    
+  }
+
+  .underline {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    opacity: 0%;
+    height: 0.5rem;
+    background-color: #1f439f;
+    margin: 0 auto;
+    transition: width .4s cubic-bezier(.3, 1.5, .3, 1), opacity .1s;
+  }
+
+  .nav-item {
+    margin: 0 2rem;
+  }
+
+  .nav-item:hover .underline {
+    width: calc(85% - 1rem);
+    opacity: 100%;
+  }
+}

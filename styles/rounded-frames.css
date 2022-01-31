@@ -1,0 +1,73 @@
+/* --- CSS for images with frames with rounded outlines (ol) --- */
+
+.outline {
+    position: relative;
+    border: 2px solid #dce7e1;
+    border-radius: 12px;
+    height: 420px;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ol-frame {
+    border-radius: 5px;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.ol-img {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    opacity: 100%;
+    transition: 0.3s;
+}
+
+.text-box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-box,
+.text-box p {
+    color: #dce7e1;
+    transition: color 0.3s;
+}
+
+.text-box p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.location {
+    font-family: proxima-nova-extra-condensed, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16vw;
+    line-height: 80%;
+    text-transform: uppercase;
+}
+
+.button.outline:hover .ol-frame{
+    background-color: #dce7e1;
+}
+
+.button.outline:hover .ol-img{
+    opacity: 30%;
+    filter: blur(2px) saturate(50%);
+}
+
+.button.outline:hover .text-box,
+.button.outline:hover .text-box p {
+    color: #0C0E0D;
+}

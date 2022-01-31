@@ -1,0 +1,63 @@
+h1, h2, h3 {
+  font-family: ibm-plex-sans-condensed, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  color: #0078d7;
+}
+
+h1 span {
+  color: #212529;
+}
+
+h2, h3 {
+  font-family: ibm-plex-sans-condensed, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h2 {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.header,
+article {
+ max-width: 960px;
+ margin: 0 auto;
+}
+
+.header {
+  background-color: #0076d760;
+  height: 10rem;
+  padding: 2rem;
+}
+
+.breadcrumbs {
+  color: #21252980;
+  margin-bottom: .5rem;
+}
+
+.breadcrumb-link {
+  padding: 0;
+  color: #21252980;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: none;
+  color: #212529;
+}
+
+article {
+  padding: 2rem 4rem;
+  border: 1px solid #21252940;
+  border-top: none;
+}
