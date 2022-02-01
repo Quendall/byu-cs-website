@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>VS Code Set-up | BYU CS</title>
+    <title>Tutorial Intro | BYU CS</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.typekit.net/tqd8dck.css" />
@@ -76,85 +76,87 @@
         <span class="breadcrumb-divider">></span>
         <a href="/pages/resources.html" class="breadcrumb-link">Resources</a>
       </div>
-      <h1>Visual Studio Code <span>| Setup</span></h1>
+      <h1>Introduction to CS Tutorials</h1>
     </div>
     <article class="tutorial">
       <h2>Introduction</h2>
       <p>
-        Visual Studio Code (VS Code) is a lightweight but powerful source code
-        editor which runs on your desktop and is available for Windows, macOS
-        and Linux.
+        Welcome to CS Tutorials! In the future, we hope to have many tutorials
+        to help students along their way through the program. Each class run by
+        the CS department will have tutorials specific to the needs of their
+        students that will be created and updated by the Professors and their
+        TAs.
       </p>
+
+      <h2>Tags</h2>
+      <p>
+        At the top of each tutorial is a list of tags that can be used to filter
+        search results.
+      </p>
+
+      <h2>Special Info Boxes</h2>
+      <p>Tutorials may contain the following info boxes:</p>
+
       <div id="info-box-1" class="info-box collapsed">
-        <h3>Difference between VS Code and IDEs</h3>
+        <h3>This is a "Ramble" Box</h3>
         <p>
-          VS Code is not an IDE like Visual Studio Community/Professional or
-          CLion, but it still provides powerful tools for debugging, task
-          running and version control, and has a large pool of extensions that
-          can expand its capabilities. It does, however, have several drawbacks.
+          In boxes like this, you will find extended information about the
+          subject you are reading about. You can continue reading by pressing
+          the little caret button below.
         </p>
         <div class="text collapsed">
           <p>
-            VS Code is cross-platform (Linux, Windows, Mac OS) and is fast, and
-            it's ability to add extensions makes it highly customizable to your
-            personal coding needs. However, it is important to remember that it
-            is only an editor, and so a lot of the processes that are done
-            automatically on IDEs can be much more cumbersome on VS Code.
-          </p>
-          <p>
-            This is especially the case with C# and C++ development. Project
-            setup and management requires a lot of manual work, and most of the
-            nice shortcuts and features found in IDEs don't exist. For example,
-            to even run and test your code, you have to manually set up a
-            launcher, whereas CLion and Visual Studio will do that for you
-            automatically.
-          </p>
-          <p>
-            Learning to set up VS Code will take more time and effort, so if
-            this sounds like too much work to you then we would recommend using
-            an IDE. If you decide to stick around, later on in this tutorial we
-            will show you how to set up a project for C++.
+            These readings are not necessary to complete the tutorial, but are
+            nice things to know for those who are curious.
           </p>
         </div>
         <span class="expand-btn collapsed" onclick="expand('info-box-1')"
           ><span class="expand-prompt collapsed"></span
         ></span>
       </div>
+      <div id="info-box-2" class="info-box collapsed warning">
+        <h3>This is a "Warning" Box</h3>
+        <p>
+          If there are any important details, recommendations or potential
+          issues, they will appear in a box like this.
+        </p>
+      </div>
 
-      <h2>VS Code Download and Setup</h2>
-      <p>
-        Go to
-        <a href="https://code.visualstudio.com/download"
-          >code.visualstudio.com/download</a
-        >
-        and download the version of VS Code for your operating system. Run the
-        install file.
+      <h2>Code Boxes</h2>
+      <p class="desktop">
+        Tutorials may also have code boxes like the one below. To copy to
+        clipboard, just hover your mouse over the box and a green copy button
+        will appear. Give it a try!
+      </p>
+      <p class="mobile">
+        Tutorials may also have code boxes like the one below. To copy to
+        clipboard, just tap the little green copy button. Give it a try!
       </p>
 
-      <h2>Remote Connection</h2>
-      <div class="info-box notice">
-        <h3>Incomplete</h3>
-        <p>
-          Sorry, it looks like this part of the tutorial has not been completed.
-          Coming soon!
-        </p>
+      <div class="code-box">
+        <button id="copy-btn" class="copy-btn ico-swap">
+          <div class="ico-wrapper check ico-swap">
+            <span id="checkmark"></span>
+          </div>
+          <div class="ico-wrapper copy ico-swap">
+            <div class="copy-ico first"></div>
+            <div class="copy-ico second"></div>
+          </div>
+        </button>
+        <code>
+          <span id="cd-text">cout << "Hello, World!";</span>
+        </code>
       </div>
-      <h2>CMake Project</h2>
-      <div class="info-box notice">
-        <h3>Incomplete</h3>
-        <p>
-          Sorry, it looks like this part of the tutorial has not been completed.
-          Coming soon!
-        </p>
-      </div>
-      <h2>Running a Project</h2>
-      <div class="info-box notice">
-        <h3>Incomplete</h3>
-        <p>
-          Sorry, it looks like this part of the tutorial has not been completed.
-          Coming soon!
-        </p>
-      </div>
+
+      <textarea spellcheck="false" placeholder="Paste your copied text here"></textarea>
+
+      <h2>Conclusion</h2>
+      <p>
+        And that’s all there is to it for now! In the future, we hope to have more
+        features to make the experience more interactive. Unfortunately, there
+        isn’t a whole lot of content here yet, but we hope to have more for you
+        soon!
+      </p>
     </article>
 
     <!-- Footer -->

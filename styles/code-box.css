@@ -1,13 +1,13 @@
 .code-box {
   position: relative;
-  display: block;
-  width: 500px;
+  display: flex;
+  align-items: center;
+  width: 100%;
   min-height: calc(24px + 1.5rem);
   padding: 0.5rem 1rem;
-  border: 1px solid #21252940;
-  overflow: hidden;
-  /* border-left: .25rem solid #21252940; */
-  background-color: #21252908;
+  margin-bottom: 3.5rem;
+  border-left: 4px solid #21252955;
+  background-color: #21252920;
   flex: 0;
 }
 
@@ -15,6 +15,7 @@ code {
   font-family: ibm-plex-mono, sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 1rem;
   color: #212529;
 }
 
@@ -25,31 +26,15 @@ code {
   top: 0.5rem;
   width: 2rem;
   height: 2rem;
-  transform: translateX(-3rem);
   background-color: #28a745;
   border: 1px solid #28a745;
   will-change: transform;
   transition: transform 0.3s, background-color 200ms;
-  transition-delay: background-color 200ms;
-}
-
-.copy-btn:hover {
-  /* transition: background-color 1s; */
-  background-color: #28a745 !important;
-  cursor: pointer;
-}
-
-.code-box:hover .copy-btn {
-  transition: transform 0.3s cubic-bezier(0.2, 1, 0.5, 1), background-color 0.2s;
-  transform: translateX(-3rem);
+  /* transition-delay: background-color 200ms; */
 }
 
 .code-box:hover .copy-ico {
   transition: border-color 0.2s;
-}
-
-.copy-btn:hover .copy-ico {
-  border-color: #f1f1f2;
 }
 
 .copy-ico {
@@ -62,17 +47,16 @@ code {
 }
 
 .ico-wrapper.check {
-  left: .25rem;
+  left: 0.25rem;
 }
 
 #checkmark {
   display: inline-block;
   width: 20px;
   height: 20px;
-  /* outline: 1px solid red; */
-  -ms-transform: rotate(40deg); 
-    -webkit-transform: rotate(40deg); 
-    transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
 }
 
 #checkmark:before {
@@ -124,4 +108,43 @@ code {
   transform: translateX(-1.75rem);
   transition: transform 200ms;
   transition-delay: 200ms;
+}
+
+@media screen and (max-width: 991px) {
+
+  .mb-0-mobile {
+    margin-bottom: 0;
+  }
+
+  .copy-btn {
+    right: 0;
+    top: auto;
+    bottom: -2.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .code-box {
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .code-box:hover .copy-btn {
+    transition: transform 0.3s cubic-bezier(0.2, 1, 0.5, 1),
+      background-color 0.2s;
+    transform: translateX(-3rem);
+  }
+
+  .copy-btn {
+    transform: translateX(-3rem);
+  }
+
+  .copy-btn:hover {
+    background-color: #28a745 !important;
+    cursor: pointer;
+  }
+
+  .copy-btn:hover .copy-ico {
+    border-color: #f1f1f2;
+  }
 }

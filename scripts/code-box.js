@@ -21,7 +21,12 @@ copyBtn.onclick = function copy() {
 
   /* Copy the text inside the text field */
   navigator.clipboard.writeText(copyText);
+}
 
-  /* Alert the copied text */
-  // alert("Copied the text: " + copyText);
+function expand(str) {
+  let element = document.getElementById(str);
+  element.getElementsByClassName("text").item(0).classList.toggle("collapsed")
+  element.getElementsByClassName("expand-btn").item(0).classList.toggle("collapsed");
+  element.getElementsByClassName("expand-prompt").item(0).classList.toggle("collapsed");
+  element.classList.toggle("collapsed");
 }
