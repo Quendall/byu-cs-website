@@ -15,7 +15,7 @@ body {
   font-family: ibm-plex-mono, sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding-top: 5rem;
+  padding-top: 74px;
   padding-bottom: 4.75rem;
 }
 
@@ -27,10 +27,12 @@ body {
 
 h1 {
   font-weight: 800;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-weight: 800;
+  margin-bottom: 1rem;
 }
 
 p {
@@ -44,23 +46,30 @@ p:last-of-type {
   margin-bottom: 0;
 }
 
+em {
+  font-weight: 300;
+}
+
+a {
+  color: #0078d7;
+}
+
 /* gets rid of the stupid bootstrap focus outline */
-textarea:hover, 
-input:hover, 
-textarea:active, 
-input:active, 
-textarea:focus, 
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
 input:focus,
 button:focus,
 button:active,
 button:hover,
 label:focus,
 .btn:active,
-.btn.active
-{
-    outline:0px !important;
-    -webkit-appearance:none;
-    box-shadow: none !important;
+.btn.active {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
 }
 
 /* --- Navbar --- */
@@ -69,7 +78,7 @@ label:focus,
   margin-right: 1rem;
   height: 48px;
   width: 48px;
-  fill: #1f439f;
+  fill: #0078d7;
 }
 
 .logo-text {
@@ -91,7 +100,7 @@ label:focus,
 .navbar-brand {
   font-weight: 800;
   font-size: 1.5rem;
-  color: #1f439f !important;
+  color: #0078d7 !important;
   display: flex;
   align-items: center;
 }
@@ -101,27 +110,6 @@ label:focus,
   justify-content: center;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: #212529;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-  color: #212529;
-}
-
-.nav-item.active>.nav-link::after {
-  position: absolute;
-  font-weight: 800;
-  content: "]";
-}
-
-.nav-item.active>.nav-link::before {
-  position: absolute;
-  left: -.1rem;
-  font-weight: 800;
-  content: "[";
-}
-
 .btn {
   border-radius: 0;
   padding: 0.5rem 1.5rem;
@@ -129,6 +117,12 @@ label:focus,
 
 .navbar-collapse {
   background-color: #fff;
+}
+
+.h-6.w-6 {
+  stroke: #3aa64c;
+  stroke-width: 2px;
+  margin-right: 1rem;
 }
 
 /* --- End Navbar --- */
@@ -143,7 +137,7 @@ label:focus,
   position: fixed;
   left: 0;
   bottom: 0;
-  background-color: #1f439f;
+  background-color: #0078d7;
   z-index: 3;
   font-family: ibm-plex-sans, sans-serif;
   font-weight: 400;
@@ -180,12 +174,34 @@ label:focus,
 }
 
 @media screen and (min-width: 992px) {
-  .navbar {
-    height: 5rem;
+  body {
+    padding: 7rem 0;
   }
 
-  .navbar-nav {
-    
+  .navbar {
+    padding: 0 2rem;
+    height: 7rem;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: #212529;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #212529;
+  }
+
+  .nav-item.active > .nav-link::after {
+    position: absolute;
+    font-weight: 800;
+    content: "]";
+  }
+
+  .nav-item.active > .nav-link::before {
+    position: absolute;
+    left: -0.1rem;
+    font-weight: 800;
+    content: "[";
   }
 
   .underline {
@@ -197,7 +213,7 @@ label:focus,
     height: 0.5rem;
     background-color: #1f439f;
     margin: 0 auto;
-    transition: width .4s cubic-bezier(.3, 1.5, .3, 1), opacity .1s;
+    transition: width 0.4s cubic-bezier(0.3, 1.5, 0.3, 1), opacity 0.1s;
   }
 
   .nav-item {
