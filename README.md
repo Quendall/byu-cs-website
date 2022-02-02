@@ -9,9 +9,9 @@ This website in the future may be split into to main pages: one for enrolled stu
 ### Creative Project 1
 <ul>
  <li>Basic home page</li>
- <li>Recources/tutorial and tools center page</li>
- <li>Visual Studio Code tutorial</li>
- <li>Major Emphasis descriptions</li>
+ <li>Resources home page</li>
+ <li>Tutorial Introduction</li>
+ <li>Visual Studio Code tutorial (beginnings)</li>
 </ul>
 
 ## Information
