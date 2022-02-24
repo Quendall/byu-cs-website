@@ -7,31 +7,31 @@ This website in the future may be split into to main pages: one for enrolled stu
 
 ## Project Phases
 ### Creative Project 1
-<ul>
- <li>Basic home page</li>
- <li>Resources home page</li>
- <li>Tutorial Introduction</li>
- <li>Visual Studio Code tutorial (beginnings)</li>
-</ul>
+- Basic home page
+- Resources home page
+- Tutorial Introduction
+- Visual Studio Code tutorial (beginnings)
+
+### Creative Project 2
+- Tools Menu
+- Color Pallete Generator Tool
 
 ## Information
 
 
 ## Tools
 ### CS 224
-<ul>
- <li>Binary calculator</li>
- <li>Assebly code bit visualizer</li>
-</ul>
+- Binary calculator
+- Assebly code bit visualizer
 
 ### CS 236
-<ul>
- <li>Finite state automota diagram</li>
- <li>Relation table diagram</li>
- <li>Graph diagram</li>
-</ul>
+- Finite state automota diagram
+- Relation table diagram
+- Graph diagram
+
+### General
+- Color Pallete Generator
  
 ## Resources
- <ul>
-  <li>How to set up Visual Studio Code for C++ projects</li>
+- How to set up Visual Studio Code for C++ projects</li>
   
