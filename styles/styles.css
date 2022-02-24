@@ -211,7 +211,7 @@ label:focus,
     width: 0px;
     opacity: 0%;
     height: 0.5rem;
-    background-color: #1f439f;
+    background-color: #0078d7;
     margin: 0 auto;
     transition: width 0.4s cubic-bezier(0.3, 1.5, 0.3, 1), opacity 0.1s;
   }
