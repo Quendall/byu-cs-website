@@ -12,9 +12,17 @@ document.getElementById("generate").addEventListener("click", function (event) {
     if ((http.readyState == 4 && http.status == 200)) {
       let palette = JSON.parse(http.responseText).result;
       console.log(palette);
+
     }
   };
 
   http.open("POST", url, true);
   http.send(JSON.stringify(data));
 });
+
+function changeColors(palette) {
+  let colors = Array.from(document.getElementsByClassName("color"));
+  for (let i = 0; i < colors.length; i++) {
+    colors[i].style.backgroundColor = palette[i];
+  }
+}
