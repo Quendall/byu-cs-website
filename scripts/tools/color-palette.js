@@ -31,7 +31,7 @@ document.getElementById("generate").addEventListener("click", function (event) {
             "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
           box.style.backgroundColor = colorCode;
           box.className = "color " + calcTextColor(color);
-          box.getElementsByClassName("p").innerHTML = colorCode;
+          box.getElementsByClassName("color-code")[0].innerHTML = colorCode;
         }
         // const item = document.createElement("div");
         // item.className = "color";

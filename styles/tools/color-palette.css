@@ -31,11 +31,15 @@ body {
   color: #000
 }
 
-svg.light {
-  fill: #000;
+.light svg {
+  color: #000;
 }
 
 .dark {
+  color: #fff;
+}
+
+.dark svg {
   color: #fff;
 }
 
