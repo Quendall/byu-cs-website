@@ -35,7 +35,9 @@ document.getElementById("generate").addEventListener("click", function (event) {
             rgbVals[j].value = color[j];
           }
         }
-        if (box.classList.contains("hidden")) box.classList.remove("hidden");
+      }
+      if (document.getElementById("color-box").classList.contains("hidden")) {
+        document.getElementById("color-box").classList.remove("hidden");
       }
     }
   };
