@@ -1,49 +1,142 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   overflow-y: hidden;
   overflow-x: hidden;
+  padding-bottom: 2.75rem;
 }
 
 #color-box {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .color {
   /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  padding: 1rem;
   width: 100%;
-  height: 100px;
+  height: 100%;
+}
+
+button {
+  transition: opacity 200ms, background-color 200ms, color 200ms;
+  margin: 0.25rem;
+}
+
+.unlock,
+.copy {
+  opacity: 50%;
+}
+
+button:hover {
+  opacity: 100%;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100px;
 }
 
 .buttons button {
   margin: 0.5rem;
+  padding: 0.5rem 1.5rem;
   border: 1px solid #0078d7;
   color: #0078d7;
   background-color: transparent;
 }
 
-.light {
-  color: #000
+.buttons button:hover {
+  background-color: #0078d7;
+  color: #fff;
+  opacity: 100%;
 }
 
-.light svg {
+.light,
+.light svg,
+.light input {
   color: #000;
 }
 
-.dark {
-  color: #fff;
-}
-
-.dark svg {
+.dark,
+.dark svg,
+.dark input {
   color: #fff;
 }
 
 .color button {
   background-color: transparent;
   border: none;
+}
+
+.color-code {
+  padding: 0.5rem;
+  margin-left: auto;
+  justify-self: flex-end;
+}
+
+.rgb-value {
+  text-align: center;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.dark .rgb-value {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.light .rgb-value {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.hidden {
+  display: none;
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  #color-box {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .color {
+    height: 100%;
+    flex-direction: column-reverse;
+    padding-bottom: 2rem;
+  }
+
+  p:last-of-type {
+    margin: 0;
+  }
+
+  .color-code {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    margin-bottom: auto !important;
+    align-items: center;
+  }
+
+  .color button {
+    margin: .5rem;
+  }
+
+  .rgb-value {
+    margin: 0.25rem;
+  }
+
+
 }

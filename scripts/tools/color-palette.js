@@ -27,57 +27,15 @@ document.getElementById("generate").addEventListener("click", function (event) {
         let color = palette[i];
         if (box.firstElementChild.classList.contains("unlock")) {
           box.setAttribute("data-color", JSON.stringify(color));
-          let colorCode =
-            "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
-          box.style.backgroundColor = colorCode;
+          setColor(box, color);
           box.className = "color " + calcTextColor(color);
-          box.getElementsByClassName("color-code")[0].innerHTML = colorCode;
-        }
-        // const item = document.createElement("div");
-        // item.className = "color";
-        // item.setAttribute("data-color", JSON.stringify(color));
-        // let colorCode =
-        //   "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
-        // item.style.backgroundColor = colorCode;
-        // let dataColorClass = "dark";
-        // if (color[0] * 0.299 + color[1] * 0.587 + color[2] * 0.114 > 186) {
-        //   dataColorClass = "light";
-        // }
-        // let results = "";
-        // results +=
-        //   "<button class='unlock " +
-        //   dataColorClass +
-        //   "'>" +
-        //   ICONS.unlock +
-        //   "</button>";
-        // results +=
-        //   "<button class='copy " +
-        //   dataColorClass +
-        //   "'>" +
-        //   ICONS.copy +
-        //   "</button>";
-        // results +=
-        //   "<p class='color-code " + dataColorClass + "'>" + colorCode + "</p>";
-        // item.innerHTML = results;
-        // box.appendChild(item);
-      }
-
-      let locks = Array.from(document.getElementsByClassName("unlock"));
-      for (let i = 0; i < locks.length; i++) {
-        locks[i].innerHTML = ICONS.lock;
-        locks[i].addEventListener("click", function (event) {
-          event.preventDefault;
-          if (locks[i].classList.contains("unlock")) {
-            locks[i].innerHTML = ICONS.lock;
-            locks[i].classList.remove("unlock");
-            data.input[i] = JSON.parse(locks[i].parentNode.dataset.color);
-          } else {
-            locks[i].innerHTML = ICONS.unlock;
-            locks[i].classList.add("unlock");
-            data.input[i] = "N";
+          // box.getElementsByClassName("color-code")[0].innerHTML = colorCode;
+          rgbVals = Array.from(box.getElementsByClassName("rgb-value"));
+          for (let j = 0; j < rgbVals.length; j++) {
+            rgbVals[j].value = color[j];
           }
-          console.log(data.input);
-        });
+        }
+        if (box.classList.contains("hidden")) box.classList.remove("hidden");
       }
     }
   };
@@ -85,6 +43,55 @@ document.getElementById("generate").addEventListener("click", function (event) {
   http.open("POST", url, true);
   http.send(JSON.stringify(data));
 });
+
+function setColor(box, color) {
+  let colorCode = getRgbValue(color);
+  box.style.backgroundColor = colorCode;
+}
+
+let copyList = Array.from(document.getElementsByClassName("copy"));
+let locks = Array.from(document.getElementsByClassName("unlock"));
+let colorCodes = Array.from(document.getElementsByClassName("color-code"));
+for (let i = 0; i < locks.length; i++) {
+  copyList[i].innerHTML = ICONS.copy;
+  locks[i].innerHTML = ICONS.unlock;
+  locks[i].addEventListener("click", function (event) {
+    event.preventDefault();
+    if (locks[i].classList.contains("unlock")) {
+      locks[i].innerHTML = ICONS.lock;
+      locks[i].classList.remove("unlock");
+      data.input[i] = JSON.parse(locks[i].parentNode.dataset.color);
+    } else {
+      locks[i].innerHTML = ICONS.unlock;
+      locks[i].classList.add("unlock");
+      data.input[i] = "N";
+    }
+    console.log(data.input);
+  });
+
+  copyList[i].addEventListener("click", (event) => {
+    event.preventDefault();
+    let copyContent = getRgbValue(
+      JSON.parse(copyList[i].parentNode.dataset.color)
+    );
+    console.log(copyContent);
+    navigator.clipboard.writeText(copyContent);
+  });
+
+  let rgbVals = Array.from(colorCodes[i].getElementsByClassName("rgb-value"));
+  for (let j = 0; j < rgbVals.length; j++) {
+    rgbVals[j].addEventListener("change", (event) => {
+      event.preventDefault();
+      value = rgbVals[j].value;
+      if (value > 255) value = 255;
+      if (value < 0) value = 0;
+      let color = JSON.parse(colorCodes[i].parentNode.dataset.color);
+      color[j] = value;
+      setColor(colorCodes[i].parentNode, color);
+      colorCodes[i].parentNode.dataset.color = JSON.stringify(color);
+    });
+  }
+}
 
 function getRgbValue(color) {
   return "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
@@ -95,3 +102,31 @@ function calcTextColor(color) {
     return "light";
   } else return "dark";
 }
+
+// const item = document.createElement("div");
+// item.className = "color";
+// item.setAttribute("data-color", JSON.stringify(color));
+// let colorCode =
+//   "rgb(" + color[0] + ", " + color[1] + ", " + color[2] + ")";
+// item.style.backgroundColor = colorCode;
+// let dataColorClass = "dark";
+// if (color[0] * 0.299 + color[1] * 0.587 + color[2] * 0.114 > 186) {
+//   dataColorClass = "light";
+// }
+// let results = "";
+// results +=
+//   "<button class='unlock " +
+//   dataColorClass +
+//   "'>" +
+//   ICONS.unlock +
+//   "</button>";
+// results +=
+//   "<button class='copy " +
+//   dataColorClass +
+//   "'>" +
+//   ICONS.copy +
+//   "</button>";
+// results +=
+//   "<p class='color-code " + dataColorClass + "'>" + colorCode + "</p>";
+// item.innerHTML = results;
+// box.appendChild(item);
